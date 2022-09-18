@@ -6,14 +6,14 @@ btnStart.addEventListener('click', startChangeColors);
 btnStop.addEventListener('click', stoptChangeColors);
 
 btnStop.disabled = true;
-
+let timerId;
 function startChangeColors(e) {
+  btnStop.disabled = false;
+  e.target.disabled = true;
   bodyBackground.style.backgroundColor = getRandomHexColor();
   timerId = setInterval(() => {
     bodyBackground.style.backgroundColor = getRandomHexColor();
   }, 1000);
-  e.target.disabled = true;
-  btnStop.disabled = false;
 }
 
 function stoptChangeColors(e) {
