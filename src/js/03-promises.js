@@ -43,6 +43,6 @@ function createPromise(position, delay) {
       } else {
         reject('');
       }
-    }, delay - formData.step);
+    }, delay - formData.delay);
   });
 }
